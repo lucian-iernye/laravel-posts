@@ -2,8 +2,14 @@
 
 @section('content')
 <div class="flex justify-center">
-    <div class="w-8/12 bg-white p-6 rounded">
-        <h1>Register</h1>
+    <div class="w-6/12 bg-white p-6 rounded">
+        <form action="{{route('register')}}" method="post">
+            <div class="mb-4">
+                <label for="name" class="sr-only">Name</label>
+                <input type="text" name="name" id="name" placeholder="Your name"
+                    class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="">
+            </div>
+        </form>
     </div>
 </div>
 @endsection
