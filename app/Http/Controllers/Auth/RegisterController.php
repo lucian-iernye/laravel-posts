@@ -24,7 +24,7 @@ class RegisterController extends Controller
             'password' => 'required|confirmed'
         ]);
 
-        // create user
+        // create and store user
         User::create([
             'name' => $request->name,
             'username' => $request->username,
@@ -32,8 +32,9 @@ class RegisterController extends Controller
             // 'password' => bcrypt($request->password)
             'password' => Hash::make($request->password)
         ]);
-        // store user
+
         // sign the user in
         // redirect to posts page
+        return redirect()->route('dashboard');
     }
 }
