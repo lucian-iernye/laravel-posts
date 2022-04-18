@@ -17,11 +17,16 @@
             <li><a href="/posts" class="p-3">Posts</a></li>
         </ul>
 
+
         <ul class="flex items-center">
+            @if (auth()->user())
+            <!-- or @auth and @guest -->
             <li><a href="" class="p-3">Lucian</a></li>
+            <li><a href="" class="p-3">Logout</a></li>
+            @else
             <li><a href="" class="p-3">Login</a></li>
             <li><a href="{{route('register')}}" class="p-3">Register</a></li>
-            <li><a href="" class="p-3">Logout</a></li>
+            @endif
         </ul>
     </nav>
     @yield('content')
