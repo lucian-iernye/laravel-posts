@@ -19,14 +19,15 @@
 
 
         <ul class="flex items-center">
-            @if (auth()->user())
-            <!-- or @auth and @guest -->
+            @auth
             <li><a href="" class="p-3">Lucian</a></li>
             <li><a href="" class="p-3">Logout</a></li>
-            @else
-            <li><a href="" class="p-3">Login</a></li>
+            @endauth
+
+            @guest
+            <li><a href="{{route('login')}}" class="p-3">Login</a></li>
             <li><a href="{{route('register')}}" class="p-3">Register</a></li>
-            @endif
+            @endguest
         </ul>
     </nav>
     @yield('content')
