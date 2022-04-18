@@ -34,6 +34,8 @@ class RegisterController extends Controller
         ]);
 
         // sign the user in
+        auth()->attempt($request->only(['email', 'password']));
+
         // redirect to posts page
         return redirect()->route('dashboard');
     }
